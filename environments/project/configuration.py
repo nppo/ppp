@@ -23,6 +23,7 @@ ECS_CONTAINER_METADATA_URI = os.environ.get("ECS_CONTAINER_METADATA_URI", None)
 ENVIRONMENTS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPOSITORY = "870512711545.dkr.ecr.eu-central-1.amazonaws.com"
 REPOSITORY_AWS_PROFILE = "nppo-prod"
+FARGATE_CLUSTER_NAME = "nppo"
 
 
 # Now we'll delete any items that are INVOKE variables, but with empty values

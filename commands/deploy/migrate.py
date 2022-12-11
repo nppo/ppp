@@ -4,10 +4,9 @@ from commands.aws.ecs import run_task
 
 
 @task(help={
-    "mode": "Mode you want to migrate: development, acceptance or production. Must match APPLICATION_MODE",
-    "version": "Version of the project you want to migrate. Defaults to latest version"
+    "mode": "Mode you want to migrate: development, acceptance or production. Must match APPLICATION_MODE"
 })
-def migrate(ctx, mode, version=None):
+def migrate(ctx, mode):
     """
     Executes migration task on container cluster for development, acceptance or production environment on AWS
     """
@@ -22,4 +21,4 @@ def migrate(ctx, mode, version=None):
             "value": f"{ctx.config.aws.postgres_password_arn}"
         },
     ]
-    run_task(ctx, mode, command, environment, version=version)
+    run_task(ctx, mode, command, environment)
